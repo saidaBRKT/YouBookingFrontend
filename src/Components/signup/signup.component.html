@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div class="container-fluid px-0 d-flex vh-100">
+
+  <div class="w-50 bg d-none d-lg-flex">
+    <img src="assets/pexels-francesco-ungaro-96444.jpg" class="vh-100 w-100" style="background-size: cover">
+  </div>
+
+  <div class="w-50 my-auto mx-auto mx-lg-3">
+    <div class="mt-4">
+      <div class="card">
+       <div class="card-header bg-black">
+        <h1 class="text-white">Inscription</h1>
+       </div>
+      <form method="post" class="d-flex flex-column justify-content-around">
+          <div class="form-group mt-5 mx-5">
+<!--            <label>Nom Complet:</label>-->
+            <input type="text" class="form-control" name="nom" placeholder="Nom Complet"
+            [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="form-group mt-3 mx-5">
+<!--            <label>Email:</label>-->
+            <input type="text" class="form-control" name="email" placeholder="Email"
+            [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="form-group mt-3 mx-5">
+<!--            <label>Password :</label>-->
+            <input type="text" class="form-control" name="password" placeholder="Password"
+            [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="form-group mt-3 mx-5">
+<!--            <label>Télephone :</label>&ndash;&gt;-->
+            <input type="text" class="form-control" name="tel" placeholder="Télephone"
+            [(ngModel)]="user.tel" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="form-group w-50 mt-3 mx-5">
+              <!--            <label>Télephone :</label>&ndash;&gt;-->
+              <input type="text" class="form-control" name="pays" placeholder="Pays"
+                     [(ngModel)]="user.address.pays" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group w-50 mt-3 mx-5">
+              <!--            <label>Télephone :</label>&ndash;&gt;-->
+              <input type="text" class="form-control" name="ville" placeholder="Ville"
+                     [(ngModel)]="user.address.ville" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+        <div class="d-flex justify-content-between">
+          <div class="form-group w-50 mt-3 mx-5">
+            <!--            <label>Télephone :</label>&ndash;&gt;-->
+            <input type="text" class="form-control" name="pays" placeholder="Code Postal"
+                   [(ngModel)]="user.address.codePostal" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group w-50 mt-3 mx-5">
+            <!--            <label>Télephone :</label>&ndash;&gt;-->
+            <input type="text" class="form-control" name="ville" placeholder="Addresse"
+                   [(ngModel)]="user.address.address" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+
+          <div class="d-flex justify-content-center mt-5 ">
+            <div class="btn-group w-50 " role="group" aria-label="Basic radio toggle button group">
+
+              <input type="radio" class="btn-check" [(ngModel)]="user.role.id" value="2" name="role" id="btnradio1" autocomplete="off" checked>
+              <label class="btn btn-outline-secondary" for="btnradio1">Client</label>
+
+              <input type="radio" class="btn-check" [(ngModel)]="user.role.id" value="3" name="role" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-secondary" for="btnradio2">Proprietaire</label>
+
+            </div>
+          </div>
+        <div class="d-flex justify-content-center align-items-center w-100">
+          <button type="submit" class="btn btn-outline-secondary mt-5 w-50 " (click)="save()">Submit</button>
+        </div>
+        <div class=" text-center pt-0 px-lg-2 px-1">
+          <p class="mb-2 text-sm mx-auto">
+            Already have an account?
+            <a routerLink="/Signin" class="text-primary text-gradient font-weight-bold">Sign in</a>
+          </p>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+

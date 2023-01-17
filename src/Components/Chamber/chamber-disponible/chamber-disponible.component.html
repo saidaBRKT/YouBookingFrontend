@@ -1,0 +1,23 @@
+<p>chamber-disponible works!</p>
+
+<!--======== Chambre cards-->
+<div class="row d-flex flex-wrap justify-content-center align-items-center">
+  <div class="card col-12 col-md-6 col-lg-5 mx-2 my-2 " *ngFor="let chambre of Chambres" >
+    <div class="card-body row">
+      <div class="col-4">
+        <img src="assets/pexels-francesco-ungaro-96444.jpg">
+      </div>
+      <div class="col-8">
+        <h1 class="card-title">{{chambre.num}}</h1>
+        <p class="card-text">{{chambre.prix}}</p>
+        <p class="card-text">{{chambre.nbrLits}} </p>
+        <div class="d-flex ">
+          <div >
+            <a (click)="reserver(chambre.id)" class="btn btn-primary">Reserver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--=====-->

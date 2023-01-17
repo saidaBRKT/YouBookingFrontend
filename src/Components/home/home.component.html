@@ -1,0 +1,78 @@
+
+<app-header></app-header>
+
+
+<div class="d-flex flex-column">
+<!--  <div class=" ">-->
+<!--    <video  controls class="w-100">-->
+<!--      <source src="assets/videos/production%20ID_4069480.mp4" type="video/mp4">-->
+<!--    </video>-->
+<!--  </div>-->
+  <div class="hero">
+
+<!--    <video autoplay loop muted plays-inline class="back-video">-->
+<!--      <source src="assets/videos/production%20ID_4069480.mp4" type="video/mp4">-->
+<!--    </video>-->
+    <div class="content">
+      <h1>YouBooking</h1>
+      <a href="#">Reserver</a>
+
+    </div>
+
+  </div>
+
+  <!--======== form filter-->
+  <div class=" w-100 justify-content-center align-items-center mt-2">
+    <form class="d-flex row justify-content-center align-items-center" method="post" (submit)="redirect()" >
+
+      <div class="mb-3 col-4 ">
+        <label for="date1" class="form-label">Date Debut</label>
+        <input [(ngModel)]="date.dateDebut" name="dateDebut" type="date" class="form-control" id="date1" placeholder="Date Debut">
+      </div>
+
+      <div class="mb-3 col-4">
+        <label for="date2" class="form-label col-2">Date Fin</label>
+        <input [(ngModel)]="date.dateFin" name="dateFin" type="date" class="form-control" id="date2" placeholder="Date Fin">
+      </div>
+
+      <div class=" col-3 ">
+        <button type="submit"  class="btn btn-outline-primary w-100 mt-2">Submit</button>
+      </div>
+
+    </form>
+  </div>
+  <!--========-->
+
+  <div class="w-100 d-flex justify-content-center align-items-center my-5">
+    <H1 class="text-primary fw-bold fs-1">Our Hotels</H1>
+  </div>
+
+<!--======== Hotel cards-->
+  <div class="row d-flex flex-wrap justify-content-center align-items-center">
+  <div class="card col-12 col-md-6 col-lg-5 mx-2 my-2 " *ngFor="let hotel of hotels" >
+    <div class="card-body row">
+      <div class="col-4">
+        <img src="assets/pexels-francesco-ungaro-96444.jpg">
+      </div>
+      <div class="col-8">
+        <h1 class="card-title">{{hotel.nom}}</h1>
+        <p class="card-text">{{hotel.adresse.ville}}</p>
+        <p class="card-text">{{hotel.adresse.address}} , {{hotel.adresse.codePostal}}</p>
+        <div class="d-flex ">
+          <div >
+            <a routerLink="/detailleHotel/{{hotel.id}}" class="btn btn-primary">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<!--=====-->
+
+
+
+  <div class="mb-0 mt-5">
+   <app-footer></app-footer>
+  </div>
+
+</div>
